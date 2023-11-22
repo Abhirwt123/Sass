@@ -1,0 +1,46 @@
+@mixin d-flex($jc: center, $al: center, $gap: 0px) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $al;
+    gap: $gap;
+}
+
+@mixin grid($grid-col: repeat(3, 1fr), $gap: 0px) {
+    display: grid;
+    grid-template-columns: $grid-col;
+    gap: $gap;
+}
+
+@mixin f-direction($fd: column) {
+    flex-direction: $fd;
+}
+
+// media query small devices
+@mixin mobile {
+    @media screen and (max-width:map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+// media query medium devices
+
+@mixin tab {
+    @media screen and (max-width:map-get($breakpoints, tab)) {
+        @content;
+    }
+}
+// media query medium devices
+
+@mixin tab-sm {
+    @media screen and (max-width:map-get($breakpoints, tab-sm)) {
+        @content;
+    }
+}
+
+// media large mobile devices
+
+@mixin desktop {
+    @media screen and (max-width:map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
